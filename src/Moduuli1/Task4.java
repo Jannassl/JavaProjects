@@ -1,9 +1,9 @@
 package Moduuli1;
 
-public class Cat {
+public class Task4 {
     private String name;
 
-    public Cat(String name) {
+    public Task4(String name) {
         this.name = name;
     }
 
@@ -13,8 +13,8 @@ public class Cat {
 
     public static void main(String[] args) {
         // Create an instance of the Cat class with a name
-        Cat cat1 = new Cat("Whiskers");
-        Cat cat2 = new Cat("Rex");
+        Task4 cat1 = new Task4("Whiskers");
+        Task4 cat2 = new Task4("Rex");
 
         // Call the meow method on the cat instance
         cat1.meow();
