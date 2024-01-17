@@ -21,7 +21,6 @@ public class MeasurmentUnits {
         double remaining2 = remaining -(intJakoNaula * naula);
 
         double jakoLuoti = remaining2 / luoti;
-        DecimalFormat luodit = new DecimalFormat("###,##");
 
         System.out.println(intJakoLeiviska+" Leiviskää");
         System.out.println(intJakoNaula + " nauloja");
