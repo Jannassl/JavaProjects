@@ -1,10 +1,13 @@
 package Moduuli1;
 
 import java.text.DecimalFormat;
+import java.util.Scanner;
 
 public class MeasurmentUnits {
     public static void main(String [] args) {
-        int grams = 30000;
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter grams: ");
+        int grams = Integer.parseInt(scanner.nextLine());
         double luoti = 13.28;
         double naula = luoti * 32;
         double leiviska = 20 * naula;
