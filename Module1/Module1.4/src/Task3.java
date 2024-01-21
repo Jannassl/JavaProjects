@@ -11,8 +11,10 @@ public class Task3 {
         for(int i =0; i<size; i++) {
             arr[i] = scanner.nextInt();
         }
-        for(int number : arr){
-            //System.out.print(number+", ");
+
+        int number = arr.length;
+
+        if (number>1); {
 
         }
     }
