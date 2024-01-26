@@ -8,7 +8,7 @@ public class CoffeeShop {
             System.out.print("Valitse vaihtoehto: ");
             int valinta = scanner.nextInt();
 
-            switch(choise) {
+            switch(valinta) {
                 case 1:
                     coffeeMaker.powerOn();
                     break;
@@ -16,7 +16,9 @@ public class CoffeeShop {
                     coffeeMaker.powerOff();
                     break;
                 case 3:
-                    System.out.println("normaali tai espresso (n/e: ");
+                    coffeeMaker.selectType();
+                    coffeeMaker.setAmount();
+                    break;
 
             }
 
