@@ -1,14 +1,46 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ArrayList;
+
 
 public class GroceryListManager {
     Map<String, Double> products = new HashMap<>();
     Map<String, String> categories = new HashMap<>();
     Map<String, Integer> quantities = new HashMap<>();
+    public class ShoppingList{
+        private String purpose;
+        private ArrayList<String> items;
+
+        public ShoppingList(String purpose) {
+            this.purpose = purpose;
+            this.items = new ArrayList<>();
+        }
+        public void addItem(String item) {
+            items.add(item);
+            System.out.println("Added " + item + " to " + purpose + " list.");
+        }
+
+        public void removeItem(String item) {
+            if (items.contains(item)) {
+                items.remove(item);
+                System.out.println("Removed " + item + " from " + purpose + " list.");
+            } else {
+                System.out.println(item + " is not in the " + purpose + " list.");
+            }
+        }
+
+        public void displayList() {
+            System.out.println("Shopping List for " + purpose + ":");
+            for (String item : items) {
+                System.out.println("- " + item);
+            }
+        }
+    }
 
     public void addItem(String item, double price){
         products.put(item, price);
     }
+
 
     public void addItemWithCategory(String item, String category) {
         categories.put(item, category);
