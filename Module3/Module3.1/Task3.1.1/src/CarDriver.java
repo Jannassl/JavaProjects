@@ -4,6 +4,8 @@ public class CarDriver {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Car car = new Car("Subaru", 60,180);
+        SportsCar sportsCar = new SportsCar("BMW",60,260);
+
 
 
 

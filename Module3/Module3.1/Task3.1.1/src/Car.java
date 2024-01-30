@@ -8,12 +8,10 @@ public class Car {
     private float tankCapacity;
     private float topSpeed;
 
-    public Car(String typeName) {
-        speed = 0; gasolineLevel = 0;
-        this.typeName = typeName;
-    }
+
     public Car(String typeName,float tankCapacity,float topSpeed){
-        speed = 0; gasolineLevel = 0;
+        this.speed = 0;
+        this.gasolineLevel = 0;
         this.typeName = typeName;
         this.tankCapacity = tankCapacity;
         this.topSpeed = topSpeed;
@@ -25,11 +23,11 @@ public class Car {
     public void accelerate() {
         if (gasolineLevel > 0) {
             if (cruiseControlOn) {
-                gasolineLevel -= 10;
-                speed = Math.min(speed + 20, targetSpeed);
+                gasolineLevel -= 5;
+                speed = Math.min(speed + 10, targetSpeed);
             } else {
-                gasolineLevel -= 10;
-                speed += 20;
+                gasolineLevel -= 5;
+                speed += 10;
             }
         } else {
             speed = 0;
