@@ -17,6 +17,7 @@ public class Car {
     }
     public void accelerate() {
         if (gasolineLevel > 0)
+
             speed += 10;
         else
             speed = 0;
