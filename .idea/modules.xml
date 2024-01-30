@@ -10,6 +10,8 @@
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.1/Module2.1.iml" filepath="$PROJECT_DIR$/Module2/Module2.1/Module2.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.2/Module2.2.iml" filepath="$PROJECT_DIR$/Module2/Module2.2/Module2.2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.3/Module2.3.iml" filepath="$PROJECT_DIR$/Module2/Module2.3/Module2.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module3/Module3.iml" filepath="$PROJECT_DIR$/Module3/Module3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module3/Module3.1/Module3.1.iml" filepath="$PROJECT_DIR$/Module3/Module3.1/Module3.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.1/Task1/Task1.iml" filepath="$PROJECT_DIR$/Module2/Module2.1/Task1/Task1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.1/Task2/Task2.iml" filepath="$PROJECT_DIR$/Module2/Module2.1/Task2/Task2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.2/Task2.1/Task2.1.iml" filepath="$PROJECT_DIR$/Module2/Module2.2/Task2.1/Task2.1.iml" />
@@ -22,6 +24,7 @@
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.2/Task2.5/Task2.5.iml" filepath="$PROJECT_DIR$/Module2/Module2.2/Task2.5/Task2.5.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.1/Task3/Task3.iml" filepath="$PROJECT_DIR$/Module2/Module2.1/Task3/Task3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.3/Task3.1/Task3.1.iml" filepath="$PROJECT_DIR$/Module2/Module2.3/Task3.1/Task3.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module3/Module3.1/Task3.1.1/Task3.1.1.iml" filepath="$PROJECT_DIR$/Module3/Module3.1/Task3.1.1/Task3.1.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.3/Task3.2/Task3.2.iml" filepath="$PROJECT_DIR$/Module2/Module2.3/Task3.2/Task3.2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.3/Task3.3/Task3.3.iml" filepath="$PROJECT_DIR$/Module2/Module2.3/Task3.3/Task3.3.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.1/Task4/Task4.iml" filepath="$PROJECT_DIR$/Module2/Module2.1/Task4/Task4.iml" />
