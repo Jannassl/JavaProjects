@@ -5,8 +5,16 @@ public class TestiOhjelma {
         Motorcycle motorcycle = new Motorcycle("Motorcycle","Petrol","Yellow");
 
         car.start();
+        car.stop();
         car.getInfo();
 
+        bus.start();
+        bus.stop();
+        bus.getInfo();
+
+        motorcycle.start();
+        motorcycle.stop();
+        motorcycle.getInfo();
 
     }
 }
