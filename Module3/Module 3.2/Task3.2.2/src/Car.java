@@ -5,7 +5,7 @@ public class Car extends AbstractVehicle {
     private String fuel;
 
     public Car(String type, String fuel, String color){
-        super(type,fuel,color);
+        super(type, fuel, color);
 
     }
     @Override
@@ -17,19 +17,10 @@ public class Car extends AbstractVehicle {
 
         System.out.println("Car is turning off...");
     }
+
     @Override
     void honk(){
-        System.out.println("Beep beep");
-    }
-    @Override
-    public void getInfo() {
-        System.out.println("Vehicle information: ");
-        System.out.println("Type: "+ getType());
-        System.out.println("fuel: "+ getFuel());
-        System.out.println("color: "+ getColor());
-    }
-    public String getType() {
-        return type;
+        System.out.println("Beep Beep!!");
     }
 
     public String getColor() {

@@ -1,10 +1,11 @@
 public class Motorcycle extends AbstractVehicle{
+    private String status;
     private String type;
     private String color;
     private String fuel;
 
     public Motorcycle(String type, String fuel, String color){
-        super(type,fuel,color);
+        super(type, fuel, color);
 
     }
     @Override
@@ -16,21 +17,15 @@ public class Motorcycle extends AbstractVehicle{
 
         System.out.println("Motorcycle is turning off...");
     }
-    @Override
-    public void getInfo() {
-        System.out.println("Vehicle information: ");
-        System.out.println("Type: "+ getType());
-        System.out.println("fuel: "+ getFuel());
-        System.out.println("color: "+ getColor());
-    }
+
     @Override
     void honk(){
-        System.out.println("Beep beep");
+        System.out.println("Beep Beep!!");
+    }
+    void accelerate(){
+        System.out.println(type+" has accelerated");
     }
 
-    public String getType() {
-        return type;
-    }
 
     public String getColor() {
         return color;
