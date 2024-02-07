@@ -25,6 +25,10 @@ public class Motorcycle extends AbstractVehicle{
     void accelerate(){
         System.out.println(type+" has accelerated");
     }
+    @Override
+    public void charge() {
+        System.out.println("This vehicle is not electric!");
+    }
 
 
     public String getColor() {

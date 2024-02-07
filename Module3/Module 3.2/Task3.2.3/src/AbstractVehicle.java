@@ -1,4 +1,4 @@
-abstract class AbstractVehicle implements Vehicle {
+abstract class AbstractVehicle implements Vehicle, ElectricVehicle {
     protected String type;
     protected String fuel;
     protected String  color;

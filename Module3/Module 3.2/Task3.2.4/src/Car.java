@@ -4,8 +4,8 @@ public class Car extends AbstractVehicle {
     private String color;
     private String fuel;
 
-    public Car(String type, String fuel, String color){
-        super(type, fuel, color);
+    public Car(String type, String fuel, String color, double effficiency){
+        super(type, fuel, color, effficiency);
 
     }
     @Override
@@ -23,6 +23,11 @@ public class Car extends AbstractVehicle {
         System.out.println("Beep Beep!!");
     }
 
+    @Override
+    void displayEfficiency(){
+        System.out.println(CalculateEfficiency() +"l/ 100km");
+    }
+
     public String getColor() {
         return color;
     }
@@ -30,4 +35,9 @@ public class Car extends AbstractVehicle {
     public String getFuel() {
         return fuel;
     }
+    @Override
+    public double CalculateEfficiency() {
+        return efficiency;
+    }
+
 }

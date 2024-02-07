@@ -2,13 +2,16 @@ abstract class AbstractVehicle implements Vehicle {
     protected String type;
     protected String fuel;
     protected String  color;
+    protected double efficiency;
 
-    public AbstractVehicle(String type, String fuel, String color) {
+    public AbstractVehicle(String type, String fuel, String color,double efficiency) {
         this.type = type;
         this.fuel = fuel;
         this.color = color;
+        this.efficiency = efficiency;
     }
     abstract void honk();
+    abstract void displayEfficiency();
 
     @Override
     public void getInfo() {
@@ -28,4 +31,8 @@ abstract class AbstractVehicle implements Vehicle {
     public void stop() {
         System.out.println("Stopping the " + type);
     }
+    public double getEfficiency(){
+        return efficiency;
+    }
+
 }

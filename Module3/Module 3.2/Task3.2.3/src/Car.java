@@ -30,4 +30,8 @@ public class Car extends AbstractVehicle {
     public String getFuel() {
         return fuel;
     }
+    @Override
+    public void charge() {
+        System.out.println("This vehicle is not electric!");
+    }
 }

@@ -1,21 +1,20 @@
-public class Car extends AbstractVehicle {
-
+public class ElectricCar extends AbstractVehicle{
     private String type;
     private String color;
     private String fuel;
 
-    public Car(String type, String fuel, String color){
+    public ElectricCar(String type, String fuel, String color){
         super(type, fuel, color);
 
     }
     @Override
     public void start(){
-        System.out.println("Car is starting..");
+        System.out.println("Electric car is starting..");
     }
     @Override
     public void stop() {
 
-        System.out.println("Car is turning off...");
+        System.out.println("Electric car is turning off...");
     }
 
     @Override
@@ -29,5 +28,9 @@ public class Car extends AbstractVehicle {
 
     public String getFuel() {
         return fuel;
+    }
+    @Override
+    public void charge() {
+        System.out.println("Charging....");
     }
 }
