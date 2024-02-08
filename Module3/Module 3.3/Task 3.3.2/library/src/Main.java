@@ -16,6 +16,11 @@ public class Main {
         library.borrowBook(libraryMember1,book1);
 
         library.returnBook(libraryMember1,book1);
+        library.reserveBook(libraryMember1, book2);
+        library.displayReserved(libraryMember1);
+        library.cancelReservation(libraryMember1);
+        library.displayReserved(libraryMember1);
+
 
     }
 }
