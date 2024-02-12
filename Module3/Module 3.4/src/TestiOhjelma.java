@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
 public class TestiOhjelma {
     public static void main(String[] args) {
-        int vastaus = 0;
+
+
+
         String [] data = ReadColumn(1, "https://users.metropolia.fi/~jarkkov/temploki.csv",";");
-        for(int i = 0; i<data.length; i++){
+        for(int i = 1; i<data.length; i++){
             System.out.println(data[i]);
-
         }
-
     }
     public static String[] ReadColumn(int col, String website, String delimeter){
         URL myUrl;
