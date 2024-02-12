@@ -1,30 +1,44 @@
 import java.io.*;
 import java.net.*;
+import java.util.ArrayList;
+
 public class TestiOhjelma {
     public static void main(String[] args) {
+        int vastaus = 0;
+        String [] data = ReadColumn(1, "https://users.metropolia.fi/~jarkkov/temploki.csv",";");
+        for(int i = 0; i<data.length; i++){
+            System.out.println(data[i]);
+
+        }
+
+    }
+    public static String[] ReadColumn(int col, String website, String delimeter){
         URL myUrl;
         try {
-            myUrl = new URL("https://users.metropolia.fi/~jarkkov/temploki.csv");
-        }catch (MalformedURLException e){
+            myUrl = new URL(website);
+        } catch (MalformedURLException e) {
             System.err.println(e);
-            return;
+            return null;
         }
+        String data [];
+        String currentLine;
+        ArrayList<String> colData = new ArrayList<>();
+
         try {
-            InputStream isStream = myUrl.openStream();
-            InputStreamReader istreamreader = new InputStreamReader(isStream);
-
+            InputStream istream = myUrl.openStream();
+            InputStreamReader istreamreader = new InputStreamReader(istream);
             BufferedReader reader = new BufferedReader(istreamreader);
+            for (int i = 0; i < 145; i++){
+                currentLine = reader.readLine();
+                data = currentLine.split(delimeter);
+                colData.add(data[1]);
 
-            String line;
-            StringBuilder response = new StringBuilder();
-            while((line=reader.readLine()) != null){
-                response.append(line);
-            }
-            reader.close();
-            System.out.println(response.toString());
-        } catch (IOException e){
-            System.err.println(e);
+
+            } // while((currentLine = reader.readLine()) != null)
+        }catch (IOException e) {
+            System.out.println(e);
+            return null;
         }
+        return colData.toArray(new String[0]);
     }
-
 }
