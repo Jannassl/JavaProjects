@@ -1,6 +1,3 @@
-package Moduuli1;
-
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class MeasurmentUnits {

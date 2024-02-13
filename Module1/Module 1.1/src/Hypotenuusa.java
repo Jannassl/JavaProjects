@@ -1,5 +1,3 @@
-package Moduuli1;
-
 import java.util.Scanner;
 
 public class Hypotenuusa {
