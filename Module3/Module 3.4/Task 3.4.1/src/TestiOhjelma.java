@@ -38,6 +38,7 @@ public class TestiOhjelma {
 
 
 
+
             } // while((currentLine = reader.readLine()) != null)
         }catch (IOException e) {
             System.out.println(e);
