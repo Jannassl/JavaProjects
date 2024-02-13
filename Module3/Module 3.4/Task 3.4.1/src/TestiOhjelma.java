@@ -4,16 +4,19 @@ import java.util.ArrayList;
 
 public class TestiOhjelma {
     public static void main(String[] args) {
-
+        ArrayList<Float> luvut = new ArrayList<>();
 
 
         String [] data = ReadColumn(1, "https://users.metropolia.fi/~jarkkov/temploki.csv",";");
         for(int i = 1; i<data.length; i++){
             System.out.println(data[i]);
+
         }
+
     }
     public static String[] ReadColumn(int col, String website, String delimeter){
         URL myUrl;
+
         try {
             myUrl = new URL(website);
         } catch (MalformedURLException e) {
@@ -34,11 +37,13 @@ public class TestiOhjelma {
                 colData.add(data[1]);
 
 
+
             } // while((currentLine = reader.readLine()) != null)
         }catch (IOException e) {
             System.out.println(e);
             return null;
         }
         return colData.toArray(new String[0]);
+
     }
 }
