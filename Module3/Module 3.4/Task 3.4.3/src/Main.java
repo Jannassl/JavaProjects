@@ -72,7 +72,7 @@ public class Main {
         }
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(FILENAME))) {
             Enrollment e = (Enrollment) ois.readObject();
-            System.out.println(e);
+            System.out.println(enrollment);
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }

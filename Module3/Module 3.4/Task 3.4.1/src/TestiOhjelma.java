@@ -34,6 +34,7 @@ public class TestiOhjelma {
             for (int i = 0; i < 145; i++){
                 currentLine = reader.readLine();
                 data = currentLine.split(delimeter);
+
                 colData.add(data[1]);
 
 
