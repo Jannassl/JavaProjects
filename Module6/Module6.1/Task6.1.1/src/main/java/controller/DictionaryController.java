@@ -1,21 +1,48 @@
 package controller;
 import model.Dictionary;
-import view.DictionaryView;
+import javafx.event.ActionEvent;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
 
-public class DictionaryController extends Dictionary {
+public class DictionaryController {
+
     private Dictionary dictionary;
-    private DictionaryView dictionaryView;
+    private TextField searchField, wordField, meaningField;
+    private TextArea meaningArea;
 
+    public DictionaryController(Dictionary dictionary, TextField searchField, TextArea meaningArea,
+                                TextField wordField, TextField meaningField) {
+        this.dictionary = dictionary;
+        this.searchField = searchField;
+        this.meaningArea = meaningArea;
+        this.wordField = wordField;
+        this.meaningField = meaningField;
+    }
 
-    public static void main(String[] args) {
-        Dictionary dictionary1 = new Dictionary();
-        dictionary1.addToDictionary("Apple", "A fruit");
-        dictionary1.addToDictionary("Banana", "A yellow fruit");
-        dictionary1.addToDictionary("Cat", "A pet animal");
+    public void handleSearch(ActionEvent event) {
+        String word = searchField.getText().trim();
+        if (word.isEmpty()) {
+            meaningArea.setText("Please enter a word to search.");
+        } else {
+            String meaning = dictionary.searchWord(word);
+            meaningArea.setText(meaning);
+        }
+    }
 
-
-
-        DictionaryView.launch(DictionaryView.class);
+    public void handleAddWord(ActionEvent event) {
+        String word = wordField.getText().trim();
+        String meaning = meaningField.getText().trim();
+        if (word.isEmpty() || meaning.isEmpty()) {
+            meaningArea.setText("Please enter both word and meaning.");
+        } else {
+            dictionary.addWord(word, meaning);
+            meaningArea.setText("Word added successfully!");
+            wordField.clear();
+            meaningField.clear();
+        }
     }
 }

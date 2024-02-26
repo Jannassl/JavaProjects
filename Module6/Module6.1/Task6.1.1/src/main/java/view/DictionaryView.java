@@ -1,32 +1,45 @@
 package view;
+
+import model.Dictionary;
+import controller.DictionaryController;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-import model.Dictionary;
 
-public class DictionaryView extends Application{
-    private Dictionary dictionary;
-    // Make a method to read user input and search for that word in dictionary
-    public void start(Stage stage) {
-        FlowPane rootNode = new FlowPane();
-        Scene scene = new Scene(rootNode, 300, 200);
-        stage.setScene(scene);
-        TextField word = new TextField("Enter word to search: ");
-        Button button = new Button("Search");
-        TextArea result = new TextArea();
-        rootNode.getChildren().addAll(word, button,result);
-        stage.show();
-        button.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-                System.out.println();
-            }
-        });
+public class DictionaryView extends Application {
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Dictionary dictionary = new Dictionary();
+        dictionary.addWord("hello", "greeting");
+        dictionary.addWord("world", "the planet Earth");
+
+        TextField searchField = new TextField();
+        Button searchButton = new Button("Search");
+        TextArea meaningArea = new TextArea();
+        meaningArea.setEditable(false);
+
+        TextField wordField = new TextField();
+        Label meaningLabel = new Label("Meaning:");
+        TextField meaningField = new TextField();
+        Button addButton = new Button("Add Word");
+
+        FlowPane layout = new FlowPane();
+        layout.getChildren().addAll(searchField, searchButton, meaningArea, wordField, meaningLabel, meaningField, addButton);
+
+        DictionaryController controller = new DictionaryController(dictionary, searchField, meaningArea, wordField, meaningField);
+        searchButton.setOnAction(controller::handleSearch);
+        addButton.setOnAction(controller::handleAddWord);
+
+        Scene scene = new Scene(layout, 400, 350);
+        primaryStage.setScene(scene);
+        primaryStage.setTitle("Dictionary");
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        DictionaryView.launch(DictionaryView.class);
     }
 }

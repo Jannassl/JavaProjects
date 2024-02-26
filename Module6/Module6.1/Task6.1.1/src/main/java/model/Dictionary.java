@@ -1,19 +1,20 @@
 package model;
 import java.util.HashMap;
 
-
 public class Dictionary {
-    private HashMap<String , String> dictionary = new HashMap<>();
 
-    public void addToDictionary(String word, String meaning){
-        dictionary.put(word, meaning);
+    private HashMap<String, String> dictionary;
+
+    public Dictionary() {
+        dictionary = new HashMap<>();
     }
-    void searchInDictionary(String word){
-        if(dictionary.containsKey(word)){
-            System.out.println("Meaning of " + word + " is " + dictionary.get(word));
-        }
-        else{
-            System.out.println("Word not found in dictionary");
-        }
+
+    public void addWord(String word, String meaning) {
+        dictionary.put(word.toLowerCase(), meaning);
+    }
+
+    public String searchWord(String word) {
+        String meaning = dictionary.get(word.toLowerCase());
+        return meaning != null ? meaning : "Word not found";
     }
 }
