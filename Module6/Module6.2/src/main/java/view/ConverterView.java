@@ -44,7 +44,7 @@ public class ConverterView extends Application{
         });
 
 
-        Scene view = new Scene(layout);
+        Scene view = new Scene(layout,650,100);
         view.getStylesheets().add("style.css");
         window.setTitle("Currency converter");
         window.setScene(view);
