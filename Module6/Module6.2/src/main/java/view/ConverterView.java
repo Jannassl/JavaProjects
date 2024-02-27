@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import model.Converter;
 import org.w3c.dom.Text;
 
 public class ConverterView extends Application{
@@ -19,20 +20,14 @@ public class ConverterView extends Application{
         TextField currencyField = new TextField("Input currency to convert");
         TextField resultField = new TextField("Result");
 
-
         Button convertButton = new Button("Convert");
-        ComboBox sourceBox = new ComboBox<>();
-        sourceBox.getItems().addAll(
-                "USD",
-                "EUR",
-                "SEK"
-        );
-        ComboBox targetBox = new ComboBox<>();
-        targetBox.getItems().addAll(
-                "USD",
-                "EUR",
-                "SEK"
-        );
+        ComboBox<String> sourceBox = new ComboBox<>();
+        ComboBox<String> targetBox = new ComboBox<>();
+
+        Converter.getCurrencies().forEach((abbreviation, currency) -> {
+            sourceBox.getItems().add(abbreviation);
+            targetBox.getItems().add(abbreviation);
+        });
 
 
 
@@ -41,9 +36,16 @@ public class ConverterView extends Application{
         layout.getChildren().add(resultField);
         layout.getChildren().add(targetBox);
         layout.getChildren().add(convertButton);
+        convertButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                ConverterController.convertCurrency(sourceBox.getValue(), targetBox.getValue(), currencyField.getText(), resultField);
+            }
+        });
 
 
         Scene view = new Scene(layout);
+        view.getStylesheets().add("style.css");
         window.setTitle("Currency converter");
         window.setScene(view);
         window.show();
