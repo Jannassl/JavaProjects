@@ -10,9 +10,11 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class VirtualPetView extends Application {
-    private static final int CELL_SIZE = 20;
+    private static final int CELL_SIZE = 25;
+    private static final int IMAGE_SIZE = 7;
 
     private Canvas canvas;
     private GraphicsContext gc;
@@ -40,7 +42,11 @@ public class VirtualPetView extends Application {
 
         gc.clearRect(0, 0, canvasSize, canvasSize);
         Image image = new Image("/sadHamster.jpeg");
-        gc.drawImage(image, playerX * CELL_SIZE, playerY * CELL_SIZE);
+        ImageView imageView = new ImageView(image);
+        imageView.setFitWidth(IMAGE_SIZE);
+        imageView.setFitHeight(IMAGE_SIZE);
+        imageView.setPreserveRatio(true);
+        gc.drawImage(image, playerX * IMAGE_SIZE, playerY * IMAGE_SIZE);
         gc.setFill(Color.BLUE);
 
     }

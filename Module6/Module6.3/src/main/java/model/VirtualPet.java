@@ -3,7 +3,7 @@ package model;
 public class VirtualPet {
     private int x;
     private int y;
-    private static final int GRID_SIZE = 30;
+    private static final int GRID_SIZE = 25;
 
     public VirtualPet(int x, int y){
         this.x = x;
