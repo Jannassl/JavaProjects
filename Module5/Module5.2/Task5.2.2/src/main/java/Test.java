@@ -19,7 +19,7 @@ public class Test {
             threads[i].start();
         }
 
-        // Odotetaan threadit
+
         for (Thread thread : threads) {
             try {
                 thread.join();
