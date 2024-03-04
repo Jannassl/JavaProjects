@@ -1,24 +1,37 @@
 package model;
 
-public class VirtualPet {
-    private int x;
-    private int y;
-    private static final int GRID_SIZE = 25;
+import controller.VirtualPetController;
+import javafx.animation.AnimationTimer;
+import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import view.VirtualPetView;
 
-    public VirtualPet(int x, int y){
+
+public class VirtualPet {
+    private double x;
+    private double y;
+
+    public VirtualPet(double x, double y) {
         this.x = x;
         this.y = y;
     }
-    public int getX() {
+
+
+    public double getX() {
         return x;
     }
 
-    public int getY() {
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
         return y;
     }
 
-    public static int getGridSize() {
-        return GRID_SIZE;
+    public void setY(double y) {
+        this.y = y;
     }
-
 }

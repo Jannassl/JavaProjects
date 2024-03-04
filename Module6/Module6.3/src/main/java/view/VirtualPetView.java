@@ -1,53 +1,56 @@
+// PetView.java
 package view;
 
-import controller.VirtualPetController;
+import javafx.animation.AnimationTimer;
 import javafx.application.Application;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.input.KeyCode;
-import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import controller.VirtualPetController;
 
-public class VirtualPetView extends Application {
-    private static final int CELL_SIZE = 25;
-    private static final int IMAGE_SIZE = 7;
+import model.VirtualPet;
 
-    private Canvas canvas;
-    private GraphicsContext gc;
+public class VirtualPetView extends Canvas{
+    private VirtualPet pet;
     private VirtualPetController controller;
+    private Image petImage;
+    private double mouseX = -1;
+    private double mouseY = -1;
 
-    @Override
-    public void start(Stage primaryStage) {
-        controller = new VirtualPetController(this);
-        int gridSize = controller.getGridSize();
-        int canvasSize = gridSize * CELL_SIZE;
+    public VirtualPetView(VirtualPet pet, VirtualPetController controller) {
+        this.pet = pet;
+        this.controller = controller;
+        petImage = new Image("/sadHamster.jpg");
 
-        canvas = new Canvas(canvasSize, canvasSize);
-        gc = canvas.getGraphicsContext2D();
-        StackPane root = new StackPane(canvas);
-        Scene scene = new Scene(root, canvasSize, canvasSize);
-        primaryStage.setTitle("Graphics Demo");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        // Set the size of the Canvas
+        setWidth(800);
+        setHeight(600);
 
-        updateCanvas(controller.getPlayerX(), controller.getPlayerY());
+        setOnMouseMoved(event -> {
+            mouseX = event.getX();
+            mouseY = event.getY();
+        });
+
+        setOnMouseExited(event -> {
+            mouseX = -1;
+            mouseY = -1;
+        });
     }
-    public void updateCanvas(int playerX, int playerY) {
-        int gridSize = controller.getGridSize();
-        int canvasSize = gridSize * CELL_SIZE;
 
-        gc.clearRect(0, 0, canvasSize, canvasSize);
-        Image image = new Image("/sadHamster.jpeg");
-        ImageView imageView = new ImageView(image);
-        imageView.setFitWidth(IMAGE_SIZE);
-        imageView.setFitHeight(IMAGE_SIZE);
-        imageView.setPreserveRatio(true);
-        gc.drawImage(image, playerX * IMAGE_SIZE, playerY * IMAGE_SIZE);
-        gc.setFill(Color.BLUE);
-
+    public void drawPet(GraphicsContext gc) {
+        gc.clearRect(0, 0, getWidth(), getHeight());
+        gc.drawImage(petImage, pet.getX() - 25, pet.getY() - 25, 50, 50);
     }
+
+    public double getMouseX() {
+        return mouseX;
+    }
+
+    public double getMouseY() {
+        return mouseY;
+    }
+
+
 }
