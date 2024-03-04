@@ -23,6 +23,7 @@
       <module fileurl="file://$PROJECT_DIR$/Module5/Module5.1/Module5.1.iml" filepath="$PROJECT_DIR$/Module5/Module5.1/Module5.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module5/Module5.2/Module5.2.iml" filepath="$PROJECT_DIR$/Module5/Module5.2/Module5.2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module5/Module5.3/Module5.3.iml" filepath="$PROJECT_DIR$/Module5/Module5.3/Module5.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module5/Module5.4/Module5.4.iml" filepath="$PROJECT_DIR$/Module5/Module5.4/Module5.4.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module6/Module6.iml" filepath="$PROJECT_DIR$/Module6/Module6.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module6/Module6.1/Module6.1.iml" filepath="$PROJECT_DIR$/Module6/Module6.1/Module6.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module3/Module 3.3/Task 3.3.1/Task 3.3.1.iml" filepath="$PROJECT_DIR$/Module3/Module 3.3/Task 3.3.1/Task 3.3.1.iml" />
@@ -59,6 +60,8 @@
       <module fileurl="file://$PROJECT_DIR$/Module2/Module2.1/Task4/Task4.iml" filepath="$PROJECT_DIR$/Module2/Module2.1/Task4/Task4.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module5/Module5.3/Task5.3.1/Task5.3.1.iml" filepath="$PROJECT_DIR$/Module5/Module5.3/Task5.3.1/Task5.3.1.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module5/Module5.3/Task5.3.2/Task5.3.2.iml" filepath="$PROJECT_DIR$/Module5/Module5.3/Task5.3.2/Task5.3.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module5/Module5.4/Task5.4.1/Task5.4.1.iml" filepath="$PROJECT_DIR$/Module5/Module5.4/Task5.4.1/Task5.4.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Module5/Module5.4/Task5.4.2/Task5.4.2.iml" filepath="$PROJECT_DIR$/Module5/Module5.4/Task5.4.2/Task5.4.2.iml" />
       <module fileurl="file://$PROJECT_DIR$/Module3/Module 3.3/Task 3.3.2/library/library.iml" filepath="$PROJECT_DIR$/Module3/Module 3.3/Task 3.3.2/library/library.iml" />
     </modules>
   </component>
