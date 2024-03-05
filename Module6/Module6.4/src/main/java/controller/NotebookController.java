@@ -9,8 +9,6 @@ import javafx.scene.control.Button;
 import javafx.event.ActionEvent;
 import javafx.scene.control.ListView;
 
-
-
 public class NotebookController {
     private Notebook notebook;
     @FXML
@@ -21,6 +19,7 @@ public class NotebookController {
     private Button addButton;
     @FXML
     private ListView<String> noteList;
+
     @FXML
     private void handleAddButtonAction(ActionEvent event) {
         String title = titleField.getText();
@@ -31,9 +30,5 @@ public class NotebookController {
         noteList.getItems().add(title);
         titleField.clear();
         contentArea.clear();
-    }
-
-    public static void main(String[] args) {
-        NotebookView.launch(NotebookView.class);
     }
 }
