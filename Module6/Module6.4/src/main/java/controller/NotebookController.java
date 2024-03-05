@@ -10,15 +10,18 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.ListView;
 
 public class NotebookController {
+    @FXML
     private Notebook notebook;
     @FXML
     private TextField titleField;
     @FXML
     private TextArea contentArea;
     @FXML
-    private Button addButton;
+    private TextArea resultArea;
+
     @FXML
-    private ListView<String> noteList;
+    private Button addButton;
+
 
     @FXML
     private void handleAddButtonAction(ActionEvent event) {
@@ -27,8 +30,11 @@ public class NotebookController {
         Note note = new Note(title, content);
 
         notebook.addNote(note);
-        noteList.getItems().add(title);
         titleField.clear();
         contentArea.clear();
+
+        // Update the resultArea with the content of all notes
+        String allNotesContent = notebook.printContent();
+        resultArea.setText(allNotesContent);
     }
 }

@@ -9,10 +9,6 @@ public class Note {
         this.content = content;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -20,8 +16,4 @@ public class Note {
     public String getContent() {
         return content;
     }
-    public void setContent(String content) {
-        this.content = content;
-    }
-
 }
