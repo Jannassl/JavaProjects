@@ -13,6 +13,7 @@
         <module name="Task5.2.2" />
         <module name="Module6.4.4" />
         <module name="Module6.4" />
+        <module name="Module7.3" />
         <module name="Task6.1.1" />
       </profile>
     </annotationProcessing>
