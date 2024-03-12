@@ -59,15 +59,19 @@ public class ConverterView extends Application{
                 submitButton.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent actionEvent) {
+                        String abbreviation = abbreviationField.getText();
+                        String name = nameField.getText();
+                        double conversionRate = Double.parseDouble(conversionRateField.getText());
 
-
+                        Converter newConverter = new Converter(abbreviation, name, conversionRate);
+                        converterDao.persist(newConverter);
                     }
                 });
                 Scene view = new Scene(layout,550,100);
                 view.getStylesheets().add("style.css");
-                window.setTitle("Currency converter");
-                window.setScene(view);
-                window.showAndWait();
+                newStage.setTitle("Add Currency");
+                newStage.setScene(view);
+                newStage.showAndWait();
             }
         });
 
