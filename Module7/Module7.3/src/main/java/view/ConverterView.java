@@ -24,6 +24,7 @@ public class ConverterView extends Application{
         TextField resultField = new TextField("Result");
 
         Button convertButton = new Button("Convert");
+        Button addButton = new Button("Add currency");
         ComboBox<String> sourceBox = new ComboBox<>();
         ComboBox<String> targetBox = new ComboBox<>();
         ConverterDao converterDao = new ConverterDao();
@@ -37,10 +38,28 @@ public class ConverterView extends Application{
         layout.getChildren().add(resultField);
         layout.getChildren().add(targetBox);
         layout.getChildren().add(convertButton);
+        layout.getChildren().add(addButton);
         convertButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
                 ConverterController.convertCurrency(sourceBox.getValue(), targetBox.getValue(), currencyField.getText(), resultField);
+            }
+        });
+        addButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Stage newStage = new Stage();
+                FlowPane layout = new FlowPane();
+                TextField abbreviationField = new TextField("Input abbreviation");
+                TextField nameField = new TextField("Input name");
+                TextField conversionRateField = new TextField("Input conversion rate");
+                Button submitButton = new Button("Submit");
+                layout.getChildren().addAll(abbreviationField, nameField, conversionRateField, submitButton);
+                Scene view = new Scene(layout,650,100);
+                view.getStylesheets().add("style.css");
+                window.setTitle("Currency converter");
+                window.setScene(view);
+                window.show();
             }
         });
 
