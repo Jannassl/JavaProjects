@@ -27,9 +27,9 @@ public class ConverterView extends Application{
         ComboBox<String> sourceBox = new ComboBox<>();
         ComboBox<String> targetBox = new ComboBox<>();
         ConverterDao converterDao = new ConverterDao();
-        List<String> currencies = converterDao.getAllCurrencies();
-        sourceBox.getItems().addAll(currencies);
-        targetBox.getItems().addAll(currencies);
+        List<String> abbreviations = converterDao.findAllAbbreviations();
+        sourceBox.getItems().addAll(abbreviations);
+        targetBox.getItems().addAll(abbreviations);
 
 
         layout.getChildren().add(currencyField);
