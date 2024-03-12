@@ -11,11 +11,11 @@ import jakarta.persistence.Query;
 public class ConverterDao {
     List<Converter> converterList = new ArrayList<>();
 
-    public void persist(Converter emp) {
+    public void persist(Converter conv) {
         EntityManager em = datasource.MariaDbJpaConnection.getInstance();
         try {
             em.getTransaction().begin();
-            em.persist(emp);
+            em.persist(conv);
             em.getTransaction().commit();
         } catch (Exception e) {
             System.err.println("Error persisting Converter: " + e.getMessage());

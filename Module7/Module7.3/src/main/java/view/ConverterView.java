@@ -1,5 +1,6 @@
 package view;
 
+import Entity.Converter;
 import controller.ConverterController;
 import dao.ConverterDao;
 import javafx.application.Application;
@@ -55,11 +56,18 @@ public class ConverterView extends Application{
                 TextField conversionRateField = new TextField("Input conversion rate");
                 Button submitButton = new Button("Submit");
                 layout.getChildren().addAll(abbreviationField, nameField, conversionRateField, submitButton);
-                Scene view = new Scene(layout,650,100);
+                submitButton.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent actionEvent) {
+                        converterDao.persist(new Converter("ABC","Aakkoset",123));
+
+                    }
+                });
+                Scene view = new Scene(layout,550,100);
                 view.getStylesheets().add("style.css");
                 window.setTitle("Currency converter");
                 window.setScene(view);
-                window.show();
+                window.showAndWait();
             }
         });
 
