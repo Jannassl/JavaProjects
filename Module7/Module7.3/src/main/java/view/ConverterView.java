@@ -59,7 +59,7 @@ public class ConverterView extends Application{
                 submitButton.setOnAction(new EventHandler<ActionEvent>() {
                     @Override
                     public void handle(ActionEvent actionEvent) {
-                        converterDao.persist(new Converter("ABC","Aakkoset",123));
+
 
                     }
                 });
