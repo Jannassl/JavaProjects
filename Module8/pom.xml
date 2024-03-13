@@ -12,6 +12,7 @@
         <module>Module8.1</module>
 
         <module>Module8.1/Task8.1.2</module>
+        <module>Module8.2</module>
     </modules>
 
     <properties>
