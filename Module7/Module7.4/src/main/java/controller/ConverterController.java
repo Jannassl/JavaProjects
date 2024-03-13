@@ -7,13 +7,13 @@ import javafx.scene.control.TextField;
 import view.ConverterView;
 
 public class ConverterController {
-    public static void convertCurrency(String sourceCurrency, String targetCurrency, String amount, TextField resultField) {
+    public double convertCurrency(String sourceCurrency, String targetCurrency, double amount) {
         ConverterDao converterDao = new ConverterDao();
 
-        if (sourceCurrency == null || targetCurrency == null || amount == null || resultField == null) {
+        if (sourceCurrency == null || targetCurrency == null) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid input. Please make sure all fields are filled.", ButtonType.OK);
             alert.showAndWait();
-            return;
+            return 0.0;
         }
 
         double sourceRate = converterDao.getCurrency(sourceCurrency);
@@ -22,23 +22,17 @@ public class ConverterController {
         if (sourceRate == 0.0 || targetRate == 0.0) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid currency. Please select a valid currency.", ButtonType.OK);
             alert.showAndWait();
-            return;
+            return 0.0;
         }
 
-        double amountInUSD;
-        try {
-            amountInUSD = Double.parseDouble(amount) * sourceRate;
-        } catch (NumberFormatException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "Invalid amount. Please enter a valid number.", ButtonType.OK);
-            alert.showAndWait();
-            return;
-        }
-
+        double amountInUSD = amount * sourceRate;
         double convertedAmount = amountInUSD / targetRate;
-        resultField.setText(String.valueOf(convertedAmount));
+        return convertedAmount;
     }
+
 
     public static void main(String[] args) {
         ConverterView.launch(ConverterView.class);
     }
+
 }

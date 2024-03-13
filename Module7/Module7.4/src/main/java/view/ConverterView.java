@@ -1,8 +1,10 @@
 package view;
 
 import Entity.Converter;
+import Entity.Transaction;
 import controller.ConverterController;
 import dao.ConverterDao;
+import dao.TransactionDao;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -43,7 +45,17 @@ public class ConverterView extends Application{
         convertButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                ConverterController.convertCurrency(sourceBox.getValue(), targetBox.getValue(), currencyField.getText(), resultField);
+                String sourceCurrency = sourceBox.getValue();
+                String targetCurrency = targetBox.getValue();
+                double amountToConvert = Double.parseDouble(currencyField.getText());
+
+                ConverterController converterController = new ConverterController();
+                double convertedAmount = converterController.convertCurrency(sourceCurrency, targetCurrency, amountToConvert);
+                resultField.setText(String.valueOf(convertedAmount));
+                Transaction transaction = new Transaction(convertedAmount);
+                TransactionDao tDao = new TransactionDao();
+                tDao.persist(transaction);
+
             }
         });
         addButton.setOnAction(new EventHandler<ActionEvent>() {
